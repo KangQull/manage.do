@@ -43,7 +43,7 @@ size_map() {
         "s-2vcpu-2gb-amd") echo "2vCPU 2GB" ;;
         "s-2vcpu-4gb-amd") echo "2vCPU 4GB" ;;
         "s-4vcpu-8gb-amd") echo "4vCPU 8GB" ;;
-        "s-8vcpu-16gb-amd") echo "8vCPU 16GB" ;;
+        "s-4vcpu-16gb-amd") echo "4vCPU 16GB" ;;
         "s-16vcpu-32gb-amd") echo "16vCPU 32GB" ;;
         "s-32vcpu-64gb-amd") echo "32vCPU 64GB" ;;
         *) echo "Unknown Size" ;;
@@ -161,13 +161,15 @@ choose_size() {
         echo "6. 1 vCPU, 1 GB RAM, 35 GB NVME"
         echo "7. 1 vCPU, 2 GB RAM, 90 GB NVME"
         echo "8. 2 vCPU, 4 GB RAM, 120 GB NVME"
+        echo "9. 4 vCPU, 8 GB RAM, 240 GB NVME"
         echo ""
         echo "Premium AMD Sizes:"
-        echo "9. 1 vCPU, 1 GB RAM, 25 GB NVME"
-        echo "10. 1 vCPU, 2 GB RAM, 50 GB NVME"
-        echo "11. 2 vCPU, 2 GB RAM, 60 GB NVME"
-        echo "12. 2 vCPU, 4 GB RAM, 80 GB NVME"
-        echo "13. 4 vCPU, 8 GB RAM, 160 GB NVME"
+        echo "10. 1 vCPU, 1 GB RAM, 25 GB NVME"
+        echo "11. 1 vCPU, 2 GB RAM, 50 GB NVME"
+        echo "12. 2 vCPU, 2 GB RAM, 60 GB NVME"
+        echo "13. 2 vCPU, 4 GB RAM, 80 GB NVME"
+        echo "14. 4 vCPU, 8 GB RAM, 160 GB NVME"
+        echo "15. 4 vCPU, 16 GB RAM, 200 GB NVME"
         echo ""
         echo "00. Exit"
         read -p "Input size number: " size_choice
@@ -181,11 +183,13 @@ choose_size() {
             6) size="s-1vcpu-1gb-intel"; break ;;
             7) size="s-1vcpu-2gb-intel"; break ;;
             8) size="s-2vcpu-4gb-intel"; break ;;
-            9) size="s-1vcpu-1gb-amd"; break ;;
-            10) size="s-1vcpu-2gb-amd"; break ;;
-            11) size="s-2vcpu-2gb-amd"; break ;;
-            12) size="s-2vcpu-4gb-amd"; break ;;
-            13) size="s-4vcpu-8gb-amd"; break ;;                        
+            9) size="s-4vcpu-8gb-intel"; break ;;
+            10) size="s-1vcpu-1gb-amd"; break ;;
+            11) size="s-1vcpu-2gb-amd"; break ;;
+            12) size="s-2vcpu-2gb-amd"; break ;;
+            13) size="s-2vcpu-4gb-amd"; break ;;
+            14) size="s-4vcpu-8gb-amd"; break ;;
+            15) size="s-4vcpu-16gb-amd"; break ;;
             00) echo "Exiting..."; exit 0 ;;
             *) echo "Invalid choice. Please try again." ;;
         esac
@@ -439,7 +443,7 @@ rebuild_droplet() {
 main_menu() {
     while true; do
         echo ""
-        echo -e "--------------------------------------------------------------------------------"
+        echo -e "---------------------------------------------------------------------------"
         echo ""
         echo "Pilih opsi berikut:"
         echo "1. Deploy"
