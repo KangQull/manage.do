@@ -487,7 +487,7 @@ while true; do
 
     if validate_api_key "$api_key"; then
         clear
-        echo "API Key valid! Menampilkan daftar droplet..."
+        echo "Berhasil Login! Happy droplet..."
         show_droplet_list "$api_key"
         break
     else
