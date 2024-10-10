@@ -58,9 +58,9 @@ show_droplet_list() {
         -H "Authorization: Bearer $api_key" \
         "https://api.digitalocean.com/v2/droplets")
         
-    echo -e "###########################################################################"
-    echo -e "No.  Hostname     IP Address       OS              Size          Create Date"
-    echo -e "--------------------------------------------------------------------------"
+    echo -e "#########################################################################"
+    echo -e "No.  Hostname     IP Address       OS             Size         Create Date"
+    echo -e "-------------------------------------------------------------------------"
 
     echo "$droplet_info" | jq -r '
     .droplets[] | 
