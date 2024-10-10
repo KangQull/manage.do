@@ -59,7 +59,7 @@ show_droplet_list() {
         "https://api.digitalocean.com/v2/droplets")
         
     echo -e "#########################################################################"
-    echo -e "|No.  Hostname    | IP Address     | OS            | Size     Create Date"
+    echo -e "|No.  Hostname    | IP Address   | OS            | Size       Create Date"
     echo -e "-------------------------------------------------------------------------"
 
     echo "$droplet_info" | jq -r '
