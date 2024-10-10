@@ -58,7 +58,7 @@ show_droplet_list() {
         -H "Authorization: Bearer $api_key" \
         "https://api.digitalocean.com/v2/droplets")
         
-    echo -e "----------------------DigitalOcean Droplet Manager------------------------"
+    echo -e "###########################################################################"
     echo -e "No.  Hostname     IP Address       OS              Size          Create Date"
     echo -e "--------------------------------------------------------------------------"
 
@@ -443,7 +443,7 @@ rebuild_droplet() {
 main_menu() {
     while true; do
         echo ""
-        echo -e "---------------------------------------------------------------------------"
+        echo -e "#########################################################################"
         echo ""
         echo "Pilih opsi berikut:"
         echo "1. Deploy"
